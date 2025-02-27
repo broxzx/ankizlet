@@ -1,0 +1,18 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: ankizlet-be
+  flyway:
+    enabled: false
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  datasource:
+    url: jdbc:postgresql://localhost:5430/ankizlet
+    driver-class-name: org.postgresql.Driver
+    username: ankizlet-postgresql
+    password: fHGneFWbEqpJ7RvhudxDsmjq7LwfhrEKPV5nkdmH3JSF
