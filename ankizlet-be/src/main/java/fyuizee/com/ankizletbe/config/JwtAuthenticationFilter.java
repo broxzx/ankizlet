@@ -25,6 +25,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     private final UserDetailsService userDetailsService;
 
+    // todo: test commit (delete it)
+
     private static final String BEARER_PREFIX = "Bearer ";
 
     @Override
