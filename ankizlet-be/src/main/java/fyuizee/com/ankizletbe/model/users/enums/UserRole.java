@@ -1,4 +1,4 @@
-package fyuizee.com.ankizletbe.model;
+package fyuizee.com.ankizletbe.model.users.enums;
 
 import org.springframework.security.core.GrantedAuthority;
 

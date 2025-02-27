@@ -59,7 +59,7 @@ public class JwtUtil {
                 .getSubject();
     }
 
-    public boolean validateToken(String token, UserDetails expectedUser) {
+    public boolean isValidToken(String token, UserDetails expectedUser) {
         try {
             Claims claims = (Claims) Jwts.parser()
                     .verifyWith((SecretKey) key())

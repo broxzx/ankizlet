@@ -1,10 +1,10 @@
-package fyuizee.com.ankizletbe.model;
+package fyuizee.com.ankizletbe.model.users;
 
+import fyuizee.com.ankizletbe.model.security.enums.RegistrationSourceType;
+import fyuizee.com.ankizletbe.model.users.enums.UserRole;
+import fyuizee.com.ankizletbe.model.WordCollectionEntity;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -14,7 +14,8 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "users")
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
