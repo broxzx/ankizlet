@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  ankizlet-postgresql:
+    container_name: ankizlet-postgresql
+    image: postgres:17
+    volumes:
+      - ankizlet-postgresql-vm:/data/db
+    networks:
+      - ankizlet-postgresql-nw
+    restart: unless-stopped
+    ports:
+      - "5430:5432"
+    environment:
+      POSTGRES_USER: ankizlet-postgresql
+      POSTGRES_PASSWORD: fHGneFWbEqpJ7RvhudxDsmjq7LwfhrEKPV5nkdmH3JSF
+      POSTGRES_DB: ankizlet
+
+volumes:
+  ankizlet-postgresql-vm:
+
+networks:
+  ankizlet-postgresql-nw:
