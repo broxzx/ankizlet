@@ -1,6 +1,6 @@
 package fyuizee.com.ankizletbe.service;
 
-import fyuizee.com.ankizletbe.repository.UserRepository;
+import fyuizee.com.ankizletbe.persistance.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

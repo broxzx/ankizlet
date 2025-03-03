@@ -1,7 +1,0 @@
-#spring:
-#  application:
-#    name: ankizlet-be
-#  datasource:
-#    url: jdbc:postgresql://localhost:5432/ankizlet
-#    username: postgres
-#    password: postgres
