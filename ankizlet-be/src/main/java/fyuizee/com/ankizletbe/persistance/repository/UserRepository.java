@@ -1,6 +1,6 @@
-package fyuizee.com.ankizletbe.repository;
+package fyuizee.com.ankizletbe.persistance.repository;
 
-import fyuizee.com.ankizletbe.model.users.UserEntity;
+import fyuizee.com.ankizletbe.persistance.domain.users.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

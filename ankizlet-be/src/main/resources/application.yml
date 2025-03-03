@@ -5,7 +5,7 @@ spring:
   application:
     name: ankizlet-be
   flyway:
-    enabled: false
+    enabled: true
   jpa:
     database: POSTGRESQL
     show-sql: true
