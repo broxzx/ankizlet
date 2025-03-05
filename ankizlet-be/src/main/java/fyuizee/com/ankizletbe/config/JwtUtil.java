@@ -4,13 +4,13 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
 import javax.crypto.SecretKey;
 import java.security.Key;
-import java.security.SecureRandom;
-import java.util.Base64;
+import java.time.Duration;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -18,7 +18,11 @@ import java.util.Map;
 @Component
 public class JwtUtil {
 
-    private final String jwtSecret = generateSecretKey();
+    @Value("${jwt.secret}")
+    private String jwtSecret;
+
+    @Value("${jwt.expiration}")
+    private Duration expiration;
 
     public String generateToken(String username) {
         Map<String, Object> claims = new HashMap<>();
@@ -28,7 +32,7 @@ public class JwtUtil {
                 .add(claims)
                 .subject(username)
                 .issuedAt(new Date(System.currentTimeMillis()))
-                .expiration(new Date(System.currentTimeMillis() * 60 * 60 * 1000)) // 1 hour
+                .expiration(new Date(System.currentTimeMillis() + expiration.toMillis()))
                 .and()
                 .signWith(key())
                 .compact();
@@ -36,18 +40,6 @@ public class JwtUtil {
 
     private Key key() {
         return Keys.hmacShaKeyFor(Decoders.BASE64.decode(jwtSecret));
-    }
-
-    public String generateSecretKey() {
-        int length = 32;
-
-        SecureRandom secureRandom = new SecureRandom();
-
-        byte[] keyBytes = new byte[length];
-
-        secureRandom.nextBytes(keyBytes);
-
-        return Base64.getEncoder().encodeToString(keyBytes);
     }
 
     public String extractUsername(String token) {
