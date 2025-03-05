@@ -10,13 +10,12 @@ spring:
     database: POSTGRESQL
     show-sql: true
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: none
   datasource:
-    url: jdbc:postgresql://localhost:5432/ankizlet
+    url: jdbc:postgresql://localhost:5430/ankizlet
     driver-class-name: org.postgresql.Driver
-    username: postgres
-    password: postgres
-
+    username: ankizlet-postgresql
+    password: fHGneFWbEqpJ7RvhudxDsmjq7LwfhrEKPV5nkdmH3JSF
 
 jwt:
   secret: e10a7d01a8395dd06e749471d34d3d34aaee61842df6459226dcc5dedb572f1b1c9a69ba9791cb4260fe0fdb50027c7e08c94c6b33963f4b763fe4adfd0e30d72a3d6ba7df71c79b2c962634f6292d58d9ef3829e25938345e23424722c8e16cd7d5ca7d2c4acdc3561d75575ed269af97b82bc13299808afc4e0011a1479c7d3e3507c917e678ba4446eaead5c60157dd35ac0ed2c15f75674ca64e71642fcdce637e3059076e9c03da19725b34f54ca968dffd764f58bbf1d7301875f192592af0bf2b7d642ae4f0aaabe3b629e45964ff14e25863739071a8a6ff6b70757cf02e0812dfbd1693e2fa6f3b269127df21671dcff1f297c190fa8851fa95f913
