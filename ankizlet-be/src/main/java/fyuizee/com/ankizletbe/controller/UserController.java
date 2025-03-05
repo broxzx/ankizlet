@@ -1,8 +1,8 @@
 package fyuizee.com.ankizletbe.controller;
 
-import fyuizee.com.ankizletbe.model.users.UserEntity;
-import fyuizee.com.ankizletbe.model.users.dto.UserLoginRequest;
-import fyuizee.com.ankizletbe.model.users.dto.UserRegisterRequest;
+import fyuizee.com.ankizletbe.persistance.domain.users.dto.UserLoginRequest;
+import fyuizee.com.ankizletbe.persistance.domain.users.dto.UserRegisterRequest;
+import fyuizee.com.ankizletbe.persistance.domain.users.UserEntity;
 import fyuizee.com.ankizletbe.service.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

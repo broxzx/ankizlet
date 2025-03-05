@@ -1,12 +1,20 @@
 import './App.css'
-import HomePage from "./components/HomePage.tsx";
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import { useEffect } from "react";
+import {createBrowserRouter, RouterProvider, useNavigate} from "react-router-dom";
 import Layout from "./components/Layout.tsx";
 import LoginPage from "./components/LoginPage.tsx";
+import HomePage from "./components/HomePage.tsx";
 
 function App() {
 
+    const navigate = useNavigate();
 
+    useEffect(() => {
+        const token = localStorage.getItem("jwtToken");
+        if (!token) {
+            navigate("/login");
+        }
+    }, []);
 
     const router = createBrowserRouter([
         {

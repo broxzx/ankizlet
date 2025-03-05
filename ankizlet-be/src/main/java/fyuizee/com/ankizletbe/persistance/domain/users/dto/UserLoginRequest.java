@@ -1,4 +1,4 @@
-package fyuizee.com.ankizletbe.model.users.dto;
+package fyuizee.com.ankizletbe.persistance.domain.users.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;

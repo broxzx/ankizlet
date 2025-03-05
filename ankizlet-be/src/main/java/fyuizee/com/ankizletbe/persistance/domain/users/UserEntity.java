@@ -1,9 +1,7 @@
 package fyuizee.com.ankizletbe.persistance.domain.users;
 
-import fyuizee.com.ankizletbe.model.security.enums.RegistrationSourceType;
-import fyuizee.com.ankizletbe.persistance.domain.collectionroleusers.CollectionRoleUsersEntity;
+import fyuizee.com.ankizletbe.persistance.domain.users.enums.RegistrationSourceType;
 import fyuizee.com.ankizletbe.persistance.domain.users.enums.UserRole;
-import fyuizee.com.ankizletbe.persistance.domain.wordcollections.WordCollectionEntity;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;

@@ -1,12 +1,12 @@
 package fyuizee.com.ankizletbe.service;
 
 import fyuizee.com.ankizletbe.config.JwtUtil;
-import fyuizee.com.ankizletbe.model.security.enums.RegistrationSourceType;
-import fyuizee.com.ankizletbe.model.users.UserEntity;
-import fyuizee.com.ankizletbe.model.users.dto.UserLoginRequest;
-import fyuizee.com.ankizletbe.model.users.dto.UserRegisterRequest;
-import fyuizee.com.ankizletbe.model.users.enums.UserRole;
-import fyuizee.com.ankizletbe.repository.UserRepository;
+import fyuizee.com.ankizletbe.persistance.domain.users.enums.RegistrationSourceType;
+import fyuizee.com.ankizletbe.persistance.domain.users.dto.UserLoginRequest;
+import fyuizee.com.ankizletbe.persistance.domain.users.dto.UserRegisterRequest;
+import fyuizee.com.ankizletbe.persistance.domain.users.UserEntity;
+import fyuizee.com.ankizletbe.persistance.domain.users.enums.UserRole;
+import fyuizee.com.ankizletbe.persistance.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.validator.routines.EmailValidator;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -40,7 +40,6 @@ public class UserService {
                 .email(userRegisterRequest.getEmail())
                 .registrationSourceType(Objects.nonNull(userRegisterRequest.getEmail()) ? RegistrationSourceType.WEB : RegistrationSourceType.TELEGRAM)
                 .telegramChatId(null)
-                .wordCollections(null)
                 .role(UserRole.USER)
                 .build();
         return this.userRepository.save(userEntity);
